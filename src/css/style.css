@@ -131,6 +131,10 @@ body {
 .hamburger {
   margin-bottom: 0.1rem;
   display: none;
+  width: 100%;
+}
+.theme-switch{
+  margin-top: 4px;
 }
 
 .bar {
@@ -289,7 +293,8 @@ body {
   }
 
   .nav-menu.active {
-    right: 20px;
+    right: 0px;
+    width: 100%;
   }
 
   .nav-menu .nav-link {
@@ -306,6 +311,7 @@ body {
     width: 100%;
     text-align: center;
     margin-top: 0.5rem;
+    margin-top: 4px;
   }
 
   .hamburger {
@@ -315,7 +321,7 @@ body {
   }
 
   .hamburger.active {
-    border: 1px dotted gray;
+    /* border: 1px dotted gray; */
   }
 
   .hamburger.active .bar:nth-child(2) {
