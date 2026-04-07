@@ -23,14 +23,6 @@ const toggleSwitch = document.querySelector(
   '.theme-switch input[type="checkbox"]'
 );
 
-function switchTheme(e) {
-  if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
-  }
-}
-
 toggleSwitch.addEventListener("change", switchTheme, false);
 
 //  Store color theme for future visits
@@ -57,6 +49,11 @@ if (currentTheme) {
   if (currentTheme === "dark") {
     toggleSwitch.checked = true;
   }
+}
+if (!currentTheme) {
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  document.documentElement.setAttribute("data-theme", prefersDark ? "dark" : "light");
+  toggleSwitch.checked = prefersDark;
 }
 
 //Adding date
